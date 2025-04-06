@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -34,46 +35,54 @@ public class HelloApplication extends Application {
         Label headerLabel = new Label("Events");
         headerLabel.getStyleClass().add("header-label");
 
-        VBox vbox = new VBox (10, headerLabel, titleLabel, usernameField, passwordField, loginButton, messageLabel);
-        vbox.setStyle ("-fx-padding: 20; -fx-alignment: center;");
+        VBox vbox = new VBox(10, headerLabel, titleLabel, usernameField, passwordField, loginButton, messageLabel);
+        vbox.setStyle("-fx-padding: 20; -fx-alignment: center;");
 
-        Scene loginScene = new Scene(vbox, 300, 250);
+        Scene loginScene = new Scene(vbox, 600, 450);
         loginScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         //loginScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/CSS/style.css")).toExternalForm());
+
 
         loginButton.setOnAction(e -> {
             String username = usernameField.getText();
             String password = passwordField.getText();
 
-            if (username. equals("admin") && password.equals("1234")) {
-                messageLabel.setText ("Login OK");
+            if (username.equals("admin") && password.equals("1234")) {
+                messageLabel.setText("Login OK");
                 openNewWindow();
                 primaryStage.close();
             } else {
-                messageLabel.setText ("Login Failed :(");
+                messageLabel.setText("Login Failed :(");
             }
         });
 
-       // Label label = new Label("Login");
-       // StackPane root = new StackPane(label);
-       // Scene scene = new Scene(root,400,300);
+        // Label label = new Label("Login");
+        // StackPane root = new StackPane(label);
+        // Scene scene = new Scene(root,400,300);
 
         primaryStage.setTitle("Login");
         primaryStage.setScene(loginScene);
         primaryStage.show();
     }
 
-        private void openNewWindow() {
-        Stage newStage = new Stage();
-        Label welcomeLabel = new Label("Welcome");
-        StackPane root = new StackPane(welcomeLabel);
-        Scene scene = new Scene (root,300,200);
+    private void openNewWindow() {
 
-        newStage.setTitle("Hovedvindue");
-        newStage.setScene(scene);
-        newStage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/mastereventer/adminview.fxml"));
+            Parent root = loader.load();
+
+            Stage newStage = new Stage();
+            //Label welcomeLabel = new Label("Welcome");
+            //StackPane root = new StackPane(welcomeLabel);
+            Scene scene = new Scene(root, 300, 200);
+
+            newStage.setTitle("Administrator");
+            newStage.setScene(scene);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    public static void main(String[] args) {
-        launch(args);
     }
-}
+        public static void main (String[]args) {
+            launch(args);
+        }}
