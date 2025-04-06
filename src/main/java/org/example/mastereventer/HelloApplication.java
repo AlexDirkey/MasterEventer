@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class HelloApplication extends Application {
     private Parent pane;
@@ -30,10 +31,15 @@ public class HelloApplication extends Application {
         Button loginButton = new Button("Login");
         Label messageLabel = new Label();
 
-        VBox vbox = new VBox (10, titleLabel, usernameField, passwordField, loginButton, messageLabel);
+        Label headerLabel = new Label("Events");
+        headerLabel.getStyleClass().add("header-label");
+
+        VBox vbox = new VBox (10, headerLabel, titleLabel, usernameField, passwordField, loginButton, messageLabel);
         vbox.setStyle ("-fx-padding: 20; -fx-alignment: center;");
 
         Scene loginScene = new Scene(vbox, 300, 250);
+        loginScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        //loginScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/CSS/style.css")).toExternalForm());
 
         loginButton.setOnAction(e -> {
             String username = usernameField.getText();
