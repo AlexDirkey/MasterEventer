@@ -48,9 +48,14 @@ public class HelloApplication extends Application {
             String password = passwordField.getText();
 
             if (username.equals("admin") && password.equals("1234")) {
-                messageLabel.setText("Login OK");
-                openNewWindow();
+                messageLabel.setText("Login OK - Admin");
+                openAdminWindow();
                 primaryStage.close();
+            } else if (username.equals("eko") && password.equals("4321")) {
+                messageLabel.setText("Login OK - Koordinator");
+                openCoordinatorWindow();
+                primaryStage.close();
+
             } else {
                 messageLabel.setText("Login Failed :(");
             }
@@ -65,7 +70,7 @@ public class HelloApplication extends Application {
         primaryStage.show();
     }
 
-    private void openNewWindow() {
+    private void openAdminWindow() {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/mastereventer/adminview.fxml"));
@@ -82,6 +87,24 @@ public class HelloApplication extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void openCoordinatorWindow() {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/mastereventer/coordinatorview.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(root, 500, 350);
+            stage.setTitle("Coordinator");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
         public static void main (String[]args) {
             launch(args);

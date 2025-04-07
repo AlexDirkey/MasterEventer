@@ -21,7 +21,7 @@
     </center>
 
     <bottom>
-        <HBox spacing="10" padding="10" alignment="CENTER">
+        <HBox spacing="10" padding="10.0" alignment="CENTER">
             <Button text="Opret Bruger" onAction="#handleCreateUser"/>
             <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
             <Button text="Slet Begivenhed" onAction="#handleDeleteEvent"/>
