@@ -5,4 +5,6 @@ module org.example.mastereventer {
 
     opens org.example.mastereventer to javafx.fxml;
     exports org.example.mastereventer;
+    exports org.example.mastereventer.gui;
+    opens org.example.mastereventer.gui to javafx.fxml;
 }

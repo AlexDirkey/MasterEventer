@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.*?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.mastereventer.AdminController">
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.mastereventer.gui.AdminController"
+            prefHeight="400.0" prefWidth="600.0">
 
-    <top>
-        <ToolBar>
-            <Label text="Events Admin" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
-        </ToolBar>
-    </top>
-
-    <center>
-        <VBox spacing="10" alignment="CENTER">
-            <Label text="Kalender kommer her" fx:id="calendarPlaceholder"/>
-        </VBox>
-    </center>
-
-    <bottom>
-        <HBox spacing="10" padding="10.0" alignment="CENTER">
-            <Button text="Opret Bruger" onAction="#handleCreateUser"/>
-            <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
-            <Button text="Slet Begivenhed" onAction="#handleDeleteEvent"/>
-        </HBox>
-    </bottom>
-</BorderPane>
+</AnchorPane>

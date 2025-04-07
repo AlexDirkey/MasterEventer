@@ -1,4 +1,4 @@
-package org.example.mastereventer;
+package org.example.mastereventer.gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 

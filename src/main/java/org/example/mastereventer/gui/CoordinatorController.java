@@ -1,4 +1,4 @@
-package org.example.mastereventer;
+package org.example.mastereventer.gui;
 
 public class CoordinatorController {
 }
