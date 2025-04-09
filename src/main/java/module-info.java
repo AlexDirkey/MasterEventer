@@ -8,4 +8,5 @@ module org.example.mastereventer {
     exports org.example.mastereventer;
     exports org.example.mastereventer.gui;
     opens org.example.mastereventer.gui to javafx.fxml;
+    opens org.example.mastereventer.Objects to javafx.base;
 }

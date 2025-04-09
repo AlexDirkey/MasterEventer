@@ -11,4 +11,13 @@
             fx:controller="org.example.mastereventer.gui.AdminController"
             prefHeight="400.0" prefWidth="600.0">
 
+
+    <TableView fx:id="eventTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Title" prefWidth="150"/>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+            <TableColumn fx:id="locationColumn" text="Location" prefWidth="150"/>
+        </columns>
+    </TableView>
+
 </AnchorPane>

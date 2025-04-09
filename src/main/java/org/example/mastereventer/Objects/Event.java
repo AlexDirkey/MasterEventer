@@ -12,10 +12,10 @@ public class Event {
         private String notes;
         private String locationGuidance;
 
-                public Event(int id, String title, LocalDateTime startDateTime, LocalDateTime endDateTime, String location, String notes, String locationGuidance) {
+                public Event(String title, String location, String notes, LocalDateTime localDateTime) {
 
             this.id = id;
-            Title = title;
+            this.Title = title;
             this.startDateTime = startDateTime;
             this.endDateTime = endDateTime;
             this.locationGuidance = locationGuidance;

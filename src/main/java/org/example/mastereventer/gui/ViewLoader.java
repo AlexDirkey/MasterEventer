@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class ViewLoader {
     public static void loadView(String fxmlFile, String title) {
         try {
-            Parent root = FXMLLoader.load(ViewLoader.class.getResource("/org/example/mastereventer/login.fxml"));
+            Parent root = FXMLLoader.load(ViewLoader.class.getResource("/org/example/mastereventer/" + fxmlFile));
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setScene(new Scene(root, 800, 600));
