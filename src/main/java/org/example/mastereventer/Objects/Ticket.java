@@ -3,7 +3,7 @@ package org.example.mastereventer.Objects;
 import java.util.UUID;
 
 public class Ticket {
-    private final String id;
+    private String id;
     private String description;  // Evt. billettype eller beskrivelse
     private String customerName;
     private String customerEmail;
@@ -31,5 +31,8 @@ public class Ticket {
         return customerEmail;
     }
 
-    // Du kan evt. tilføje setters, hvis det er nødvendigt
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }

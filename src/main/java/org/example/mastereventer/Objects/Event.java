@@ -12,15 +12,14 @@ public class Event {
     private String notes;
     private String locationGuidance;
 
-    // Constructor, der sætter de væsentlige felter
+    // Constructor
     public Event(String title, String location, String notes, LocalDateTime startDateTime) {
         this.title = title;
         this.location = location;
         this.notes = notes;
         this.startDateTime = startDateTime;
-        // Sæt endDateTime til fx 2 timer efter start – alternativt kan du udvide constructoren senere:
+        // Brug endTime til automatisk måske?
         this.endDateTime = startDateTime.plusHours(2);
-        // Hvis du ikke har information for locationGuidance, sæt den til en tom streng
         this.locationGuidance = "";
     }
 

@@ -10,6 +10,7 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.mastereventer.gui.CoordinatorController"
+            styleClass="root"
             prefHeight="600.0" prefWidth="600.0">
     <!-- Knapper øverst i en HBox -->
     <HBox spacing="10" layoutX="20" layoutY="20">
@@ -29,10 +30,10 @@
         </columns>
     </TableView>
 
-    <!-- Label til billetsektionen -->
+    <!-- Labe billetsektionen
     <Label text="Billetter:" layoutX="20" layoutY="280" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
 
-    <!-- TableView til billetter -->
+    <!--  billetter -->
     <TableView fx:id="ticketTable" layoutX="20" layoutY="310" prefWidth="560" prefHeight="250">
         <columns>
             <TableColumn fx:id="ticketIdColumn" text="Ticket ID" prefWidth="200"/>
